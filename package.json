@@ -1,0 +1,14 @@
+{
+  "name": "express-bnet-auth",
+  "version": "0.0.1",
+  "description": "Battle.net OAuth Login Express Middleware",
+  "repository": "https://github.com/battlejj/express-bnet-auth",
+  "dependencies": {
+    "node-uuid": "^1.4.1",
+    "querystring": "^0.2.0",
+    "request": "^2.48.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}
