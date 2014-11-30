@@ -21,10 +21,11 @@ var bnet = require('express-bnet-auth')(bnetOptions);
 app.get('/auth/bnet', bnet.auth);
 
 app.get('/auth/bnet/callback', bnet.callback, function (req, res) {
-  return {
-    token_data: req.token_data,
-    error: req.error
-  };
+  if(req.error){
+    return res.send('The following error occurred when logging into battle.net: %s', req.error);
+  }
+
+  return res.send('Your token data is: %s', JSON.stringify(req.token_data));
 });
 ```
 
