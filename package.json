@@ -1,6 +1,6 @@
 {
   "name": "express-bnet-auth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Battle.net OAuth Login Express Middleware",
   "repository": "https://github.com/battlejj/express-bnet-auth",
   "dependencies": {
