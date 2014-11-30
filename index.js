@@ -12,7 +12,7 @@ module.exports = function(options){
       'Your battle.net authentication call has no CALLBACK_URL. This is required in order to know ' +
       'where to redirect battle.net after authentication attempts.'
     );
-  };
+    };
 
   return {
     auth: function(req, res){
@@ -40,7 +40,7 @@ module.exports = function(options){
 
       res.redirect('https://' + req.query.region + '.battle.net/oauth/authorize?' + params);
     },
-    callbackMiddleware: function(req, res, next){
+    callback: function(req, res, next){
       var scope, region, token_params;
 
       //User Declined Access
@@ -95,10 +95,10 @@ module.exports = function(options){
           try {
             var parsedResponse = JSON.parse(body);
             if(parsedResponse.error){
-              req.token_data = null
+              req.token_data = null;
               req.error = parsedResponse;
             } else {
-              res.token_data = parsedResponse;
+              req.token_data = parsedResponse;
             }
           } catch(e){
             req.token_data = null;
